@@ -50,7 +50,7 @@ google_site_verification: # fill in to your verification string
 # The end of `jekyll-seo-tag` settings
 
 google_analytics:
-  id: # fill in your Google Analytics ID
+  id: G-919JJJSSSF # fill in your Google Analytics ID
 
 # Prefer color scheme setting.
 #
@@ -116,6 +116,7 @@ pwa:
 paginate: 10
 
 # The base URL of your site
+#baseurl: "https://dragosdumitrache.github.io"
 baseurl: ""
 
 # ------------ The following options are not recommended to be modified ------------------
