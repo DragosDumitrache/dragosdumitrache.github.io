@@ -1,4 +1,665 @@
----
-layout: home
-# Index page
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yourname --resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0d1117;
+            --bg-secondary: #161b22;
+            --border: #30363d;
+            --text: #e6edf3;
+            --text-dim: #7d8590;
+            --green: #3fb950;
+            --blue: #58a6ff;
+            --purple: #a371f7;
+            --orange: #d29922;
+            --red: #f85149;
+            --cyan: #39c5cf;
+            --pink: #db61a2;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Terminal window chrome */
+        .terminal {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .terminal-header {
+            background: var(--bg);
+            padding: 0.75rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .terminal-dot.red { background: var(--red); }
+        .terminal-dot.orange { background: var(--orange); }
+        .terminal-dot.green { background: var(--green); }
+
+        .terminal-title {
+            color: var(--text-dim);
+            font-size: 12px;
+            margin-left: 0.5rem;
+        }
+
+        .terminal-body {
+            padding: 1.5rem;
+        }
+
+        /* Command prompt styling */
+        .prompt {
+            color: var(--text-dim);
+            margin-bottom: 0.25rem;
+        }
+
+        .prompt::before {
+            content: "❯ ";
+            color: var(--green);
+        }
+
+        .cmd {
+            color: var(--blue);
+        }
+
+        .flag {
+            color: var(--purple);
+        }
+
+        .arg {
+            color: var(--orange);
+        }
+
+        /* Output sections */
+        .output {
+            margin: 1rem 0 1.5rem 0;
+            padding-left: 1rem;
+            border-left: 2px solid var(--border);
+        }
+
+        .section-header {
+            color: var(--cyan);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-header::before {
+            content: "#";
+            color: var(--text-dim);
+        }
+
+        /* Header/Identity */
+        .identity {
+            margin-bottom: 1rem;
+        }
+
+        .name {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--green);
+        }
+
+        .title {
+            color: var(--text-dim);
+            font-size: 1rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .contact-item {
+            color: var(--text-dim);
+        }
+
+        .contact-item a {
+            color: var(--blue);
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Experience entries */
+        .exp-entry {
+            margin-bottom: 1.25rem;
+        }
+
+        .exp-header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 0.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .exp-role {
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        .exp-company {
+            color: var(--purple);
+        }
+
+        .exp-date {
+            color: var(--text-dim);
+            font-size: 0.85rem;
+        }
+
+        .exp-details {
+            color: var(--text-dim);
+            padding-left: 1rem;
+        }
+
+        .exp-details li {
+            margin-bottom: 0.25rem;
+            list-style: none;
+        }
+
+        .exp-details li::before {
+            content: "→ ";
+            color: var(--border);
+        }
+
+        /* Skills as tags */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            color: var(--text);
+            transition: border-color 0.2s;
+        }
+
+        .skill-tag:hover {
+            border-color: var(--blue);
+        }
+
+        .skill-category {
+            color: var(--text-dim);
+            width: 100%;
+            margin-top: 0.75rem;
+            margin-bottom: 0.25rem;
+            font-size: 0.8rem;
+        }
+
+        .skill-category:first-child {
+            margin-top: 0;
+        }
+
+        /* ASCII art section */
+        .ascii-divider {
+            color: var(--border);
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 0.75rem;
+            white-space: pre;
+            overflow-x: auto;
+        }
+
+        /* Education */
+        .edu-entry {
+            margin-bottom: 0.75rem;
+        }
+
+        .edu-degree {
+            color: var(--text);
+        }
+
+        .edu-school {
+            color: var(--purple);
+        }
+
+        .edu-year {
+            color: var(--text-dim);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 0.75rem;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer a {
+            color: var(--blue);
+            text-decoration: none;
+        }
+
+        .blink {
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        /* Fun easter egg on hover */
+        .easter-egg {
+            cursor: help;
+        }
+
+        .easter-egg:hover::after {
+            content: " 👋";
+        }
+
+        /* Download button */
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--green);
+            color: var(--bg);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-top: 1rem;
+            transition: opacity 0.2s;
+        }
+
+        .download-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* ============================================
+           PRINT STYLES - Clean professional output
+           ============================================ */
+        @media print {
+            :root {
+                --bg: #fff;
+                --bg-secondary: #fff;
+                --border: #ddd;
+                --text: #1a1a1a;
+                --text-dim: #555;
+                --green: #1a1a1a;
+                --blue: #1a1a1a;
+                --purple: #333;
+                --cyan: #1a1a1a;
+            }
+
+            body {
+                font-size: 11pt;
+                line-height: 1.4;
+            }
+
+            .container {
+                max-width: 100%;
+                padding: 0;
+            }
+
+            .terminal {
+                border: none;
+                margin-bottom: 0.5rem;
+            }
+
+            .terminal-header {
+                display: none;
+            }
+
+            .terminal-body {
+                padding: 0.5rem 0;
+            }
+
+            .prompt {
+                display: none;
+            }
+
+            .output {
+                border-left: 2px solid #333;
+                margin: 0.5rem 0;
+                padding-left: 0.75rem;
+            }
+
+            .section-header {
+                font-size: 11pt;
+                margin-bottom: 0.5rem;
+                border-bottom: 1px solid #ddd;
+                padding-bottom: 0.25rem;
+            }
+
+            .name {
+                font-size: 18pt;
+            }
+
+            .title {
+                font-size: 11pt;
+            }
+
+            .ascii-divider,
+            .download-btn,
+            .footer,
+            .blink {
+                display: none !important;
+            }
+
+            .skill-tag {
+                border: 1px solid #999;
+                padding: 0.15rem 0.5rem;
+            }
+
+            .exp-details li::before {
+                content: "• ";
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            .contact-item a::after {
+                content: none;
+            }
+        }
+
+        @page {
+            margin: 1.5cm;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Identity Block -->
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="terminal-dot red"></div>
+            <div class="terminal-dot orange"></div>
+            <div class="terminal-dot green"></div>
+            <span class="terminal-title">~/career/cv.sh</span>
+        </div>
+        <div class="terminal-body">
+            <div class="prompt">
+                <span class="cmd">whoami</span> <span class="flag">--verbose</span>
+            </div>
+            <div class="output identity">
+                <div class="name easter-egg">Your Name</div>
+                <div class="title">Staff Software Engineer & Engineering Manager</div>
+                <div class="contact-grid">
+                    <div class="contact-item">📧 <a href="mailto:your@email.com">your@email.com</a></div>
+                    <div class="contact-item">📍 Bucharest, Romania</div>
+                    <div class="contact-item">🔗 <a href="https://linkedin.com/in/you">linkedin.com/in/you</a></div>
+                    <div class="contact-item">💻 <a href="https://github.com/you">github.com/you</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About -->
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="terminal-dot red"></div>
+            <div class="terminal-dot orange"></div>
+            <div class="terminal-dot green"></div>
+            <span class="terminal-title">bash</span>
+        </div>
+        <div class="terminal-body">
+            <div class="prompt">
+                <span class="cmd">cat</span> <span class="arg">about.txt</span>
+            </div>
+            <div class="output">
+                Engineering leader who builds systems and the teams behind them.
+                Currently scaling operations across European markets while keeping
+                hands on the keyboard. I believe good architecture and good culture
+                are the same problem viewed from different angles.
+            </div>
+        </div>
+    </div>
+
+    <div class="ascii-divider">
+        ═══════════════════════════════════════════════════════════════
+    </div>
+
+    <!-- Experience -->
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="terminal-dot red"></div>
+            <div class="terminal-dot orange"></div>
+            <div class="terminal-dot green"></div>
+            <span class="terminal-title">bash</span>
+        </div>
+        <div class="terminal-body">
+            <div class="prompt">
+                <span class="cmd">git log</span> <span class="flag">--oneline</span> <span class="arg">career</span>
+            </div>
+            <div class="output">
+                <div class="section-header">Experience</div>
+
+                <div class="exp-entry">
+                    <div class="exp-header">
+                            <span>
+                                <span class="exp-role">Staff Engineer & EM</span>
+                                <span class="exp-company">@ Tide</span>
+                            </span>
+                        <span class="exp-date">2022 → present</span>
+                    </div>
+                    <ul class="exp-details">
+                        <li>Leading 2 cross-functional teams (7 BE, 2 web, 1 PM) for DE & FR market expansion</li>
+                        <li>Architected OAuth flows and API gateway modernisation</li>
+                        <li>Established deployment practices: Argo Rollouts canaries, Datadog observability</li>
+                        <li>Designed async workflows across 3 timezones (GMT, GMT+1, GMT+2)</li>
+                    </ul>
+                </div>
+
+                <div class="exp-entry">
+                    <div class="exp-header">
+                            <span>
+                                <span class="exp-role">Senior Software Engineer</span>
+                                <span class="exp-company">@ Previous Co</span>
+                            </span>
+                        <span class="exp-date">2019 → 2022</span>
+                    </div>
+                    <ul class="exp-details">
+                        <li>Built core platform with FastAPI, SQLAlchemy, AWS infrastructure</li>
+                        <li>Led monolith → microservices migration</li>
+                        <li>Mentored 4 engineers through growth plans</li>
+                    </ul>
+                </div>
+
+                <div class="exp-entry">
+                    <div class="exp-header">
+                            <span>
+                                <span class="exp-role">Software Engineer</span>
+                                <span class="exp-company">@ Earlier Co</span>
+                            </span>
+                        <span class="exp-date">2016 → 2019</span>
+                    </div>
+                    <ul class="exp-details">
+                        <li>Backend services, CI/CD pipelines, the usual origin story</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="terminal-dot red"></div>
+            <div class="terminal-dot orange"></div>
+            <div class="terminal-dot green"></div>
+            <span class="terminal-title">bash</span>
+        </div>
+        <div class="terminal-body">
+            <div class="prompt">
+                <span class="cmd">ls</span> <span class="flag">-la</span> <span class="arg">~/.skills/</span>
+            </div>
+            <div class="output">
+                <div class="section-header">Technical Stack</div>
+                <div class="skills-grid">
+                    <div class="skill-category">languages/</div>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">Bash</span>
+
+                    <div class="skill-category">backend/</div>
+                    <span class="skill-tag">FastAPI</span>
+                    <span class="skill-tag">Flask</span>
+                    <span class="skill-tag">SQLAlchemy</span>
+                    <span class="skill-tag">Celery</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">Redis</span>
+
+                    <div class="skill-category">infra/</div>
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Kubernetes</span>
+                    <span class="skill-tag">Terraform</span>
+
+                    <div class="skill-category">devops/</div>
+                    <span class="skill-tag">GitHub Actions</span>
+                    <span class="skill-tag">Argo Rollouts</span>
+                    <span class="skill-tag">Datadog</span>
+                    <span class="skill-tag">Helm</span>
+
+                    <div class="skill-category">humans/</div>
+                    <span class="skill-tag">Team Leadership</span>
+                    <span class="skill-tag">System Design</span>
+                    <span class="skill-tag">Code Review</span>
+                    <span class="skill-tag">Incident Response</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Education -->
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="terminal-dot red"></div>
+            <div class="terminal-dot orange"></div>
+            <div class="terminal-dot green"></div>
+            <span class="terminal-title">bash</span>
+        </div>
+        <div class="terminal-body">
+            <div class="prompt">
+                <span class="cmd">head</span> <span class="arg">education.log</span>
+            </div>
+            <div class="output">
+                <div class="section-header">Education</div>
+                <div class="edu-entry">
+                    <span class="edu-degree">BSc Computer Science</span>
+                    <span class="edu-school">@ University Name</span>
+                    <span class="edu-year">// 20XX</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Extras -->
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="terminal-dot red"></div>
+            <div class="terminal-dot orange"></div>
+            <div class="terminal-dot green"></div>
+            <span class="terminal-title">bash</span>
+        </div>
+        <div class="terminal-body">
+            <div class="prompt">
+                <span class="cmd">echo</span> <span class="arg">$INTERESTS</span>
+            </div>
+            <div class="output">
+                <div class="section-header">Beyond the Terminal</div>
+                <p>
+                    🏎️ F1 · 🏠 Home Automation · 🇷🇴 Romanian (native) · 🇬🇧 English (fluent)
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="ascii-divider">
+        ┌─────────────────────────────────────────────────────────┐
+        │  Available for B2B consulting via Romanian LTD         │
+        │  Let's talk: your@email.com                            │
+        └─────────────────────────────────────────────────────────┘
+    </div>
+
+    <div style="text-align: center;">
+        <a href="javascript:window.print()" class="download-btn">
+            📄 Download as PDF
+        </a>
+    </div>
+
+    <div class="footer">
+        <p>Built with <span class="blink">█</span> and too much coffee</p>
+        <p>Last commit: <span id="date"></span> · <a href="#">View source</a></p>
+    </div>
+</div>
+
+<script>
+    // Set current date
+    document.getElementById('date').textContent = new Date().toISOString().split('T')[0];
+
+    // Fun: Konami code easter egg
+    const konami = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+    let konamiIndex = 0;
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === konami[konamiIndex]) {
+            konamiIndex++;
+            if (konamiIndex === konami.length) {
+                document.body.style.fontFamily = 'Comic Sans MS, cursive';
+                setTimeout(() => {
+                    document.body.style.fontFamily = "'JetBrains Mono', monospace";
+                }, 3000);
+                konamiIndex = 0;
+            }
+        } else {
+            konamiIndex = 0;
+        }
+    });
+</script>
+</body>
+</html>
