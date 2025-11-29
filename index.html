@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>yourname --resume</title>
+    <title>Dragos Dumitrache - Staff Engineer & Engineering Manager</title>
+
+    <!-- ATS-friendly metadata -->
+    <meta name="author" content="Dragos Dumitrache">
+    <meta name="description" content="Staff Software Engineer and Engineering Manager with experience in Python, FastAPI, AWS, and team leadership.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -403,6 +407,28 @@
             .contact-item a::after {
                 content: none;
             }
+
+            /* Page break control */
+            .terminal {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            .exp-entry {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            .section-header {
+                break-after: avoid;
+                page-break-after: avoid;
+            }
+
+            /* Ensure skills grid doesn't split awkwardly */
+            .output {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
         }
 
         @page {
@@ -425,13 +451,13 @@
                 <span class="cmd">whoami</span> <span class="flag">--verbose</span>
             </div>
             <div class="output identity">
-                <div class="name easter-egg">Your Name</div>
+                <div class="name easter-egg">Dragos Dumitrache</div>
                 <div class="title">Staff Software Engineer & Engineering Manager</div>
                 <div class="contact-grid">
-                    <div class="contact-item">📧 <a href="mailto:your@email.com">your@email.com</a></div>
-                    <div class="contact-item">📍 Bucharest, Romania</div>
-                    <div class="contact-item">🔗 <a href="https://linkedin.com/in/you">linkedin.com/in/you</a></div>
-                    <div class="contact-item">💻 <a href="https://github.com/you">github.com/you</a></div>
+                    <div class="contact-item">📧 <a href="mailto:dragosd2000@gmail.com">dragosd2000@gmail.com</a></div>
+                    <div class="contact-item">📞 +40 743 092 495 | +44 7716 722 418</div>
+                    <div class="contact-item">🔗 <a href="https://linkedin.com/in/DragosDumitrache">linkedin.com/in/DragosDumitrache</a></div>
+                    <div class="contact-item">💻 <a href="https://github.com/DragosDumitrache">github.com/DragosDumitrache</a></div>
                 </div>
             </div>
         </div>
@@ -483,28 +509,45 @@
                                 <span class="exp-role">Staff Engineer & EM</span>
                                 <span class="exp-company">@ Tide</span>
                             </span>
-                        <span class="exp-date">2022 → present</span>
+                        <span class="exp-date">2025 → present</span>
                     </div>
                     <ul class="exp-details">
-                        <li>Leading 2 cross-functional teams (7 BE, 2 web, 1 PM) for DE & FR market expansion</li>
-                        <li>Architected OAuth flows and API gateway modernisation</li>
-                        <li>Established deployment practices: Argo Rollouts canaries, Datadog observability</li>
-                        <li>Designed async workflows across 3 timezones (GMT, GMT+1, GMT+2)</li>
+                        <li>Leading 2 cross-functional teams (15 engineers, 2 PMs) for European and India expansion — defined target architecture for multi-market operations and shipped France launch September 2024</li>
+                        <li>Championed continuous deployment practices, increasing releases from 5-6/week to 10+/day and reducing incidents from 5-6/week to 2-3/month by shrinking blast radius to single-PR scope</li>
+                        <li>Consolidated 4 fragmented services into a unified lender domain, replacing duplicated regional codebases with a configuration-driven approach — enabling a consistent, globally-focused platform</li>
+                        <li>Enabled engineers to own end-to-end delivery of cross-cutting initiatives, providing sponsorship and architectural guidance without becoming a bottleneck</li>
                     </ul>
                 </div>
 
                 <div class="exp-entry">
                     <div class="exp-header">
                             <span>
-                                <span class="exp-role">Senior Software Engineer</span>
-                                <span class="exp-company">@ Previous Co</span>
+                                <span class="exp-role">Senior Software Engineer II</span>
+                                <span class="exp-company">@ Omnipresent Group</span>
                             </span>
-                        <span class="exp-date">2019 → 2022</span>
+                        <span class="exp-date">Nov 2023 → Dec 2024</span>
                     </div>
                     <ul class="exp-details">
-                        <li>Built core platform with FastAPI, SQLAlchemy, AWS infrastructure</li>
-                        <li>Led monolith → microservices migration</li>
-                        <li>Mentored 4 engineers through growth plans</li>
+                        <li>Standardised service deployments on AWS with blue/green support, replacing error-prone manual processes — architecture adopted company-wide (~50 engineers) with teams owning their pipelines through composable, versioned GitHub Actions</li>
+                        <li>Established shared Python library pattern where none existed, serving 3 teams (~20 engineers) — enabled contract-driven development and reduced cognitive load by encapsulating changes into testable, versioned components</li>
+                        <li>Integrated 4-5 payment providers into a unified payments service enabling cross-platform transactions for employers and contractors</li>
+                    </ul>
+                </div>
+
+                <div class="exp-entry">
+                    <div class="exp-header">
+                            <span>
+                                <span class="exp-role">SRE / Software Engineer</span>
+                                <span class="exp-company">@ GoCardless</span>
+                            </span>
+                        <span class="exp-date">Sep 2021 → Jun 2023</span>
+                    </div>
+                    <ul class="exp-details">
+                        <li>Optimised CI pipeline by reducing container images from 3-4GB to ~500MB and relocating GKE registry to avoid cross-region transfer — saving ~$120k/year</li>
+                        <li>Built internal knowledge base adopted by 200+ engineers, reducing long-running support tickets from 50-60 to 10-20 prioritised items, and weekly tickets from 20-30 to ~10</li>
+                        <li>Upgraded 3 GKE clusters (prod, staging, dev) to modernised Terraform modules with zero downtime</li>
+                        <li>Developed Open Banking gateway integrating major UK and German banks via Yapily and Salt Edge, enabling direct bank connections for internal payments service</li>
+                        <li>Designed and shipped cross-region recurring payments API — UK variable recurring payments implementation followed from Australian specification</li>
                     </ul>
                 </div>
 
@@ -512,12 +555,28 @@
                     <div class="exp-header">
                             <span>
                                 <span class="exp-role">Software Engineer</span>
-                                <span class="exp-company">@ Earlier Co</span>
+                                <span class="exp-company">@ Upside Technologies</span>
                             </span>
-                        <span class="exp-date">2016 → 2019</span>
+                        <span class="exp-date">Nov 2020 → Sep 2021</span>
                     </div>
                     <ul class="exp-details">
-                        <li>Backend services, CI/CD pipelines, the usual origin story</li>
+                        <li>Replaced monolithic test suite (a spreadsheet-replicated-in-code testing all calculations at once) with BDD testing DSL — separating concerns, reducing test runtime, and enabling precise root cause identification on failures</li>
+                    </ul>
+                </div>
+
+                <div class="exp-entry">
+                    <div class="exp-header">
+                            <span>
+                                <span class="exp-role">Software Engineer</span>
+                                <span class="exp-company">@ Anaplan</span>
+                            </span>
+                        <span class="exp-date">Jul 2017 → Oct 2020</span>
+                    </div>
+                    <ul class="exp-details">
+                        <li>Built v2 of Anaplan's core calculation engine — an in-memory distributed system with event-driven architecture, processing 10 trillion sparsely populated cells across a 15 quintillion cell space</li>
+                        <li>Achieved 100-fold performance improvement through metrics-driven optimisation, enabling migration from dedicated data centre infrastructure to usage-based cloud deployment</li>
+                        <li>Applied Information Theory and Knowledge Representation concepts to reduce computational complexity in sparse dataset aggregation</li>
+                        <li>Implemented cyclic calculations with formal specification, increasing confidence in correctness without extensive manual testing</li>
                     </ul>
                 </div>
             </div>
@@ -541,9 +600,10 @@
                 <div class="skills-grid">
                     <div class="skill-category">languages/</div>
                     <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Golang</span>
+                    <span class="skill-tag">Rust</span>
+                    <span class="skill-tag">Java</span>
                     <span class="skill-tag">SQL</span>
-                    <span class="skill-tag">TypeScript</span>
-                    <span class="skill-tag">Bash</span>
 
                     <div class="skill-category">backend/</div>
                     <span class="skill-tag">FastAPI</span>
@@ -555,6 +615,7 @@
 
                     <div class="skill-category">infra/</div>
                     <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">GCP</span>
                     <span class="skill-tag">Docker</span>
                     <span class="skill-tag">Kubernetes</span>
                     <span class="skill-tag">Terraform</span>
@@ -590,10 +651,11 @@
             <div class="output">
                 <div class="section-header">Education</div>
                 <div class="edu-entry">
-                    <span class="edu-degree">BSc Computer Science</span>
-                    <span class="edu-school">@ University Name</span>
-                    <span class="edu-year">// 20XX</span>
+                    <span class="edu-degree">MEng Computing (Artificial Intelligence)</span>
+                    <span class="edu-school">@ Imperial College London</span>
+                    <span class="edu-year">// 2017</span>
                 </div>
+                <p style="color: var(--text-dim); margin-top: 0.5rem; font-size: 0.9rem;">Specialised in knowledge representation and temporal logic — foundations that later informed work on Anaplan's calculation engine optimisation.</p>
             </div>
         </div>
     </div>
@@ -613,7 +675,7 @@
             <div class="output">
                 <div class="section-header">Beyond the Terminal</div>
                 <p>
-                    🏎️ F1 · 🏠 Home Automation · 🇷🇴 Romanian (native) · 🇬🇧 English (fluent)
+                    📚 Fantasy Books · 📸 Photography · 🏎️ F1 · 🏠 Home Automation · 🇷🇴 Romanian (native) · 🇬🇧 English (fluent)
                 </p>
             </div>
         </div>
@@ -621,8 +683,8 @@
 
     <div class="ascii-divider">
         ┌─────────────────────────────────────────────────────────┐
-        │  Available for B2B consulting via Romanian LTD         │
-        │  Let's talk: your@email.com                            │
+        │  Available for B2B consulting via Romanian LTD          │
+        │  Let's talk: dragosd2000@gmail.com                      │
         └─────────────────────────────────────────────────────────┘
     </div>
 
