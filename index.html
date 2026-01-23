@@ -337,8 +337,8 @@
             }
 
             body {
-                font-size: 10pt;
-                line-height: 1.3;
+                font-size: 9.5pt;
+                line-height: 1.25;
             }
 
             .container {
@@ -348,7 +348,9 @@
 
             .terminal {
                 border: none;
-                margin-bottom: 0.4rem;
+                margin-bottom: 0.3rem;
+                page-break-inside: avoid;
+                break-inside: avoid;
             }
 
             .terminal-header {
@@ -356,7 +358,7 @@
             }
 
             .terminal-body {
-                padding: 0.3rem 0;
+                padding: 0.2rem 0;
             }
 
             .prompt {
@@ -365,37 +367,37 @@
 
             .output {
                 border-left: 2px solid #333;
-                margin: 0.3rem 0;
-                padding-left: 0.6rem;
+                margin: 0.2rem 0;
+                padding-left: 0.5rem;
             }
 
             .section-header {
-                font-size: 10pt;
-                margin-bottom: 0.4rem;
+                font-size: 9.5pt;
+                margin-bottom: 0.3rem;
                 border-bottom: 1px solid #ddd;
-                padding-bottom: 0.2rem;
+                padding-bottom: 0.15rem;
             }
 
             .identity {
-                margin-bottom: 0.5rem;
+                margin-bottom: 0.3rem;
                 text-align: center;
                 border-left: none !important;
                 padding-left: 0 !important;
             }
 
             .name {
-                font-size: 16pt;
+                font-size: 14pt;
                 text-align: center;
             }
 
             .title {
-                font-size: 10pt;
+                font-size: 9.5pt;
                 text-align: center;
             }
 
             .contact-line {
-                font-size: 9pt;
-                margin-top: 0.2rem !important;
+                font-size: 8.5pt;
+                margin-top: 0.15rem !important;
                 color: #333 !important;
                 text-align: center;
             }
@@ -413,29 +415,32 @@
 
             .skill-tag {
                 border: 1px solid #999;
-                padding: 0.1rem 0.4rem;
-                font-size: 9pt;
+                padding: 0.08rem 0.35rem;
+                font-size: 8.5pt;
             }
 
             .skills-grid {
-                gap: 0.3rem;
+                gap: 0.25rem;
             }
 
             .skill-category {
-                margin-top: 0.4rem;
-                padding-top: 0.3rem;
+                margin-top: 0.35rem;
+                padding-top: 0.25rem;
+                font-size: 8.5pt;
             }
 
             .exp-entry {
-                margin-bottom: 0.6rem;
+                margin-bottom: 0.4rem;
+                page-break-inside: avoid;
+                break-inside: avoid;
             }
 
             .exp-details {
-                font-size: 9.5pt;
+                font-size: 9pt;
             }
 
             .exp-details li {
-                margin-bottom: 0.15rem;
+                margin-bottom: 0.1rem;
             }
 
             .exp-details li::before {
@@ -443,7 +448,8 @@
             }
 
             .edu-entry {
-                font-size: 10pt;
+                font-size: 9pt;
+                margin-bottom: 0.3rem;
             }
 
             a {
@@ -451,24 +457,13 @@
                 color: #333;
             }
 
-            /* Page break control */
-            .exp-entry {
-                break-inside: avoid;
-                page-break-inside: avoid;
-            }
-
+            /* Page break control - keep sections together */
             .section-header {
                 break-after: avoid;
                 page-break-after: avoid;
             }
 
-            /* Allow breaks between sections but not within experience entries */
-            .terminal {
-                break-before: auto;
-                break-inside: auto;
-            }
-
-            /* Keep skills together if possible but allow break if needed */
+            /* Skills section can break if needed */
             .skills-grid {
                 break-inside: auto;
             }
@@ -481,7 +476,8 @@
         }
 
         @page {
-            margin: 1.2cm;
+            margin: 1cm;
+            size: A4;
         }
     </style>
 </head>
