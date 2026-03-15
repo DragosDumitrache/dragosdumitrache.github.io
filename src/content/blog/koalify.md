@@ -15,7 +15,9 @@ But the ideas stuck with me.
 
 Over the years, across multiple jobs and codebases, I kept running into the same pattern: I have data models, and I need to express logical conditions over them. Not just "is this field equal to X" — composable, readable rules that combine with AND, OR, NOT, and that someone can look at six months later and still understand.
 
-Every time, I'd write something ad-hoc. A bunch of if-statements. Maybe a small predicate system if I was feeling disciplined. Always drawing from the same well — the ideas from NoLog, stripped down to just the predicate evaluation bits.
+I'm fairly sure anyone who's worked on a non-trivial Python backend has been here. You start with a couple of if-statements, then the requirements get more complex, and before long you've got a tangled mess of conditionals that nobody wants to touch. Or you write a small predicate system, feel clever about it, and then leave it behind when you change jobs.
+
+That's exactly what I kept doing. Every time, I'd write something ad-hoc. Always drawing from the same well — the ideas from NoLog, stripped down to just the predicate evaluation bits.
 
 Python and Pydantic have become phenomenal for data modelling. Pydantic in particular has made it trivially easy to define, validate, and work with structured data. But neither Python nor Pydantic give you a way to express logical sentences *about* those models — and justifiably so. That's not their job.
 
