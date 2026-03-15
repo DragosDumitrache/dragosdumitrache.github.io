@@ -44,7 +44,9 @@ is_eligible(user)  # True or False
 
 That's it. `F` gives you field references, comparison operators produce criteria, `&` / `|` / `~` compose them. Rules are immutable, composable, and readable. You can build them dynamically from lists of conditions with `all_of()` and `any_of()`. They work on nested fields, list indices, dictionary keys — whatever your models look like.
 
-The thing I cared about most was that it's **not prescriptive**. It doesn't force you into a framework, it doesn't require you to inherit from a base class, it doesn't couple to Pydantic or any other library. It's just predicates. Plug it in wherever you need rule evaluation and it stays out of your way.
+The thing I cared about most was that it's **not prescriptive**. Not everyone has a formal logic background, and frankly, most developers shouldn't need one just to express "this user is active AND over 18." Existing logic programming tools tend to lean academic — they want you to think in terms of unification and resolution. That's fine in a thesis, but in a production codebase it's a barrier. Koalify deliberately trades purism for pragmatism. It uses operators you already know (`==`, `&`, `|`, `~`) on objects you already have. No new paradigm to learn, no DSL that looks like it escaped from a textbook.
+
+It doesn't force you into a framework, it doesn't require you to inherit from a base class, it doesn't couple to Pydantic or any other library. It's just predicates. Plug it in wherever you need rule evaluation and it stays out of your way.
 
 ## What it isn't
 
