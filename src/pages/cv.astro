@@ -1,0 +1,416 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="CV - Dragos Dumitrache" description="Staff Software Engineer & Engineering Manager CV">
+  <div class="cv-page max-w-4xl mx-auto px-4 py-8">
+
+    <!-- Download Button -->
+    <div class="flex justify-end mb-6 print:hidden">
+      <button
+        onclick="window.print()"
+        class="inline-flex items-center gap-2 px-4 py-2 rounded border border-border bg-card text-card-foreground hover:bg-secondary transition-colors font-mono text-sm cursor-pointer"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+        </svg>
+        Download as PDF
+      </button>
+    </div>
+
+    <!-- Identity -->
+    <section class="cv-section mb-6">
+      <div class="terminal-window">
+        <div class="terminal-titlebar">
+          <div class="terminal-buttons">
+            <span class="terminal-button terminal-button-red"></span>
+            <span class="terminal-button terminal-button-yellow"></span>
+            <span class="terminal-button terminal-button-green"></span>
+          </div>
+          <span class="text-sm text-muted-foreground font-mono">~/career/cv.sh</span>
+        </div>
+        <div class="p-6">
+          <div class="cv-identity">
+            <h1 class="text-3xl font-bold text-primary font-mono">Dragos Dumitrache</h1>
+            <p class="text-lg text-muted-foreground font-mono mt-1">Staff Software Engineer & Engineering Manager</p>
+            <div class="mt-4 text-sm text-muted-foreground font-mono space-y-1">
+              <div>
+                <a href="mailto:dragosd2000@gmail.com" class="text-accent hover:underline">dragosd2000@gmail.com</a>
+                &middot; +40 743 092 495 &middot; +44 7716 722 418
+              </div>
+              <div>
+                <a href="https://linkedin.com/in/DragosDumitrache" class="text-accent hover:underline">linkedin.com/in/DragosDumitrache</a>
+                &middot;
+                <a href="https://github.com/DragosDumitrache" class="text-accent hover:underline">github.com/DragosDumitrache</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="cv-section mb-6">
+      <div class="terminal-window">
+        <div class="terminal-titlebar">
+          <div class="terminal-buttons">
+            <span class="terminal-button terminal-button-red"></span>
+            <span class="terminal-button terminal-button-yellow"></span>
+            <span class="terminal-button terminal-button-green"></span>
+          </div>
+          <span class="text-sm text-muted-foreground font-mono">bash</span>
+        </div>
+        <div class="p-6">
+          <p class="text-muted-foreground font-mono leading-relaxed">
+            Engineering leader who builds systems and the teams behind them.
+            Currently scaling operations across European markets while keeping
+            hands on the keyboard. I believe good architecture and good culture
+            are the same problem viewed from different angles.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="cv-section mb-6">
+      <div class="terminal-window">
+        <div class="terminal-titlebar">
+          <div class="terminal-buttons">
+            <span class="terminal-button terminal-button-red"></span>
+            <span class="terminal-button terminal-button-yellow"></span>
+            <span class="terminal-button terminal-button-green"></span>
+          </div>
+          <span class="text-sm text-muted-foreground font-mono">bash</span>
+        </div>
+        <div class="p-6">
+          <h2 class="cv-heading text-lg font-semibold text-accent font-mono mb-4 border-b border-border pb-2">Experience</h2>
+
+          <div class="space-y-6">
+            <div class="cv-entry">
+              <div class="flex flex-wrap justify-between items-baseline gap-2 mb-1">
+                <span>
+                  <span class="font-semibold text-foreground">Staff Engineer & EM</span>
+                  <span class="text-primary"> @ Tide</span>
+                </span>
+                <span class="text-sm text-muted-foreground whitespace-nowrap">2025 &rarr; present</span>
+              </div>
+              <ul class="cv-details text-sm text-muted-foreground pl-4 space-y-1">
+                <li>Leading 2 cross-functional teams (15 engineers, 2 PMs) for European and India expansion — defined target architecture for multi-market operations and shipped France launch September 2024</li>
+                <li>Championed continuous deployment practices, increasing releases from 5-6/week to 10+/day and reducing incidents from 5-6/week to 2-3/month by shrinking blast radius to single-PR scope</li>
+                <li>Consolidated 4 fragmented services into a unified lender domain, replacing duplicated regional codebases with a configuration-driven approach — enabling a consistent, globally-focused platform</li>
+                <li>Enabled engineers to own end-to-end delivery of cross-cutting initiatives, providing sponsorship and architectural guidance without becoming a bottleneck</li>
+              </ul>
+            </div>
+
+            <div class="cv-entry">
+              <div class="flex flex-wrap justify-between items-baseline gap-2 mb-1">
+                <span>
+                  <span class="font-semibold text-foreground">Senior Software Engineer II</span>
+                  <span class="text-primary"> @ Omnipresent Group</span>
+                </span>
+                <span class="text-sm text-muted-foreground whitespace-nowrap">Nov 2023 &rarr; Dec 2024</span>
+              </div>
+              <ul class="cv-details text-sm text-muted-foreground pl-4 space-y-1">
+                <li>Standardised service deployments on AWS with blue/green support, replacing error-prone manual processes — architecture adopted company-wide (~50 engineers) with teams owning their pipelines through composable, versioned GitHub Actions</li>
+                <li>Established shared Python library pattern where none existed, serving 3 teams (~20 engineers) — enabled contract-driven development and reduced cognitive load by encapsulating changes into testable, versioned components</li>
+                <li>Integrated 4-5 payment providers into a unified payments service enabling cross-platform transactions for employers and contractors</li>
+              </ul>
+            </div>
+
+            <div class="cv-entry">
+              <div class="flex flex-wrap justify-between items-baseline gap-2 mb-1">
+                <span>
+                  <span class="font-semibold text-foreground">SRE / Software Engineer</span>
+                  <span class="text-primary"> @ GoCardless</span>
+                </span>
+                <span class="text-sm text-muted-foreground whitespace-nowrap">Sep 2021 &rarr; Jun 2023</span>
+              </div>
+              <ul class="cv-details text-sm text-muted-foreground pl-4 space-y-1">
+                <li>Optimised CI pipeline by reducing container images from 3-4GB to ~500MB and relocating GKE registry to avoid cross-region transfer — saving ~$120k/year</li>
+                <li>Built internal knowledge base adopted by 200+ engineers, reducing long-running support tickets from 50-60 to 10-20 prioritised items, and weekly tickets from 20-30 to ~10</li>
+                <li>Upgraded 3 GKE clusters (prod, staging, dev) to modernised Terraform modules with zero downtime</li>
+                <li>Developed Open Banking gateway integrating major UK and German banks via Yapily and Salt Edge, enabling direct bank connections for internal payments service</li>
+                <li>Designed and shipped cross-region recurring payments API — UK variable recurring payments implementation followed from Australian specification</li>
+              </ul>
+            </div>
+
+            <div class="cv-entry">
+              <div class="flex flex-wrap justify-between items-baseline gap-2 mb-1">
+                <span>
+                  <span class="font-semibold text-foreground">Software Engineer</span>
+                  <span class="text-primary"> @ Upside Technologies</span>
+                </span>
+                <span class="text-sm text-muted-foreground whitespace-nowrap">Nov 2020 &rarr; Sep 2021</span>
+              </div>
+              <ul class="cv-details text-sm text-muted-foreground pl-4 space-y-1">
+                <li>Replaced monolithic test suite (a spreadsheet-replicated-in-code testing all calculations at once) with BDD testing DSL — separating concerns, reducing test runtime, and enabling precise root cause identification on failures</li>
+              </ul>
+            </div>
+
+            <div class="cv-entry">
+              <div class="flex flex-wrap justify-between items-baseline gap-2 mb-1">
+                <span>
+                  <span class="font-semibold text-foreground">Software Engineer</span>
+                  <span class="text-primary"> @ Anaplan</span>
+                </span>
+                <span class="text-sm text-muted-foreground whitespace-nowrap">Jul 2017 &rarr; Oct 2020</span>
+              </div>
+              <ul class="cv-details text-sm text-muted-foreground pl-4 space-y-1">
+                <li>Built v2 of Anaplan's core calculation engine — an in-memory distributed system with event-driven architecture, processing 10 trillion sparsely populated cells across a 15 quintillion cell space</li>
+                <li>Achieved 100-fold performance improvement through metrics-driven optimisation, enabling migration from dedicated data centre infrastructure to usage-based cloud deployment</li>
+                <li>Applied Information Theory and Knowledge Representation concepts to reduce computational complexity in sparse dataset aggregation</li>
+                <li>Implemented cyclic calculations with formal specification, increasing confidence in correctness without extensive manual testing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Stack -->
+    <section class="cv-section mb-6">
+      <div class="terminal-window">
+        <div class="terminal-titlebar">
+          <div class="terminal-buttons">
+            <span class="terminal-button terminal-button-red"></span>
+            <span class="terminal-button terminal-button-yellow"></span>
+            <span class="terminal-button terminal-button-green"></span>
+          </div>
+          <span class="text-sm text-muted-foreground font-mono">bash</span>
+        </div>
+        <div class="p-6">
+          <h2 class="cv-heading text-lg font-semibold text-accent font-mono mb-4 border-b border-border pb-2">Technical Stack</h2>
+
+          <div class="space-y-4">
+            <div>
+              <div class="text-xs text-muted-foreground font-mono mb-2">languages/</div>
+              <div class="flex flex-wrap gap-2">
+                {["Python", "Golang", "Rust", "Java", "Ruby", "SQL"].map(s => (
+                  <span class="cv-tag px-3 py-1 text-sm font-mono rounded border border-border bg-background text-foreground">{s}</span>
+                ))}
+              </div>
+            </div>
+            <div>
+              <div class="text-xs text-muted-foreground font-mono mb-2">backend/</div>
+              <div class="flex flex-wrap gap-2">
+                {["FastAPI", "Django", "Flask", "SQLAlchemy", "Celery", "PostgreSQL", "Redis"].map(s => (
+                  <span class="cv-tag px-3 py-1 text-sm font-mono rounded border border-border bg-background text-foreground">{s}</span>
+                ))}
+              </div>
+            </div>
+            <div>
+              <div class="text-xs text-muted-foreground font-mono mb-2">infra/</div>
+              <div class="flex flex-wrap gap-2">
+                {["AWS", "GCP", "Docker", "Kubernetes", "Terraform"].map(s => (
+                  <span class="cv-tag px-3 py-1 text-sm font-mono rounded border border-border bg-background text-foreground">{s}</span>
+                ))}
+              </div>
+            </div>
+            <div>
+              <div class="text-xs text-muted-foreground font-mono mb-2">devops/</div>
+              <div class="flex flex-wrap gap-2">
+                {["GitHub Actions", "Argo Rollouts", "Datadog", "Helm"].map(s => (
+                  <span class="cv-tag px-3 py-1 text-sm font-mono rounded border border-border bg-background text-foreground">{s}</span>
+                ))}
+              </div>
+            </div>
+            <div>
+              <div class="text-xs text-muted-foreground font-mono mb-2">humans/</div>
+              <div class="flex flex-wrap gap-2">
+                {["Team Leadership", "System Design", "Code Review", "Incident Response"].map(s => (
+                  <span class="cv-tag px-3 py-1 text-sm font-mono rounded border border-border bg-background text-foreground">{s}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="cv-section mb-6">
+      <div class="terminal-window">
+        <div class="terminal-titlebar">
+          <div class="terminal-buttons">
+            <span class="terminal-button terminal-button-red"></span>
+            <span class="terminal-button terminal-button-yellow"></span>
+            <span class="terminal-button terminal-button-green"></span>
+          </div>
+          <span class="text-sm text-muted-foreground font-mono">bash</span>
+        </div>
+        <div class="p-6">
+          <h2 class="cv-heading text-lg font-semibold text-accent font-mono mb-4 border-b border-border pb-2">Education</h2>
+          <div class="font-mono">
+            <span class="font-semibold text-foreground">MEng Computing (Artificial Intelligence)</span>
+            <span class="text-primary"> @ Imperial College London</span>
+            <span class="text-muted-foreground text-sm"> // 2017</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interests -->
+    <section class="cv-section mb-6">
+      <div class="terminal-window">
+        <div class="terminal-titlebar">
+          <div class="terminal-buttons">
+            <span class="terminal-button terminal-button-red"></span>
+            <span class="terminal-button terminal-button-yellow"></span>
+            <span class="terminal-button terminal-button-green"></span>
+          </div>
+          <span class="text-sm text-muted-foreground font-mono">bash</span>
+        </div>
+        <div class="p-6">
+          <h2 class="cv-heading text-lg font-semibold text-accent font-mono mb-4 border-b border-border pb-2">Beyond the Terminal</h2>
+          <p class="text-muted-foreground font-mono">
+            Fantasy Books &middot; Photography &middot; F1 &middot; Home Automation &middot; Romanian (native) &middot; English (fluent)
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Availability -->
+    <div class="text-center text-sm text-muted-foreground font-mono border border-border rounded-lg p-4 bg-card print:hidden">
+      Available for B2B consulting via Romanian LTD &middot;
+      <a href="mailto:dragosd2000@gmail.com" class="text-accent hover:underline">Let's talk</a>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .cv-details li {
+    list-style: none;
+  }
+
+  .cv-details li::before {
+    content: "\2192  ";
+    color: var(--color-muted-foreground);
+  }
+
+  @media print {
+    .cv-page {
+      max-width: 100% !important;
+      padding: 0 !important;
+    }
+
+    :global(header),
+    :global(footer),
+    :global(nav),
+    :global([class*="command-palette"]) {
+      display: none !important;
+    }
+
+    :global(main) {
+      padding: 0 !important;
+    }
+
+    :global(body) {
+      font-size: 9.5pt !important;
+      line-height: 1.25 !important;
+      color: #1a1a1a !important;
+      background: #fff !important;
+    }
+
+    :global(html) {
+      background: #fff !important;
+    }
+
+    .cv-section {
+      margin-bottom: 0.3rem !important;
+    }
+
+    .terminal-window {
+      border: none !important;
+      background: transparent !important;
+      margin: 0 !important;
+    }
+
+    .terminal-titlebar {
+      display: none !important;
+    }
+
+    .terminal-window > div:last-child {
+      padding: 0.2rem 0 !important;
+    }
+
+    .cv-identity {
+      text-align: center;
+    }
+
+    .cv-identity h1 {
+      font-size: 14pt !important;
+      color: #1a1a1a !important;
+    }
+
+    .cv-identity p {
+      font-size: 9.5pt !important;
+      color: #555 !important;
+    }
+
+    .cv-identity div {
+      color: #333 !important;
+    }
+
+    .cv-identity a {
+      color: #333 !important;
+      text-decoration: none !important;
+    }
+
+    .cv-heading {
+      font-size: 9.5pt !important;
+      color: #1a1a1a !important;
+      border-bottom: 1px solid #ddd !important;
+      padding-bottom: 0.15rem !important;
+      margin-bottom: 0.3rem !important;
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    .cv-entry {
+      margin-bottom: 0.4rem !important;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+
+    .cv-entry span {
+      color: #1a1a1a !important;
+    }
+
+    .cv-details {
+      font-size: 9pt !important;
+    }
+
+    .cv-details li {
+      margin-bottom: 0.1rem !important;
+      color: #555 !important;
+    }
+
+    .cv-details li::before {
+      content: "\2022  " !important;
+      color: #555 !important;
+    }
+
+    .cv-tag {
+      border: 1px solid #999 !important;
+      padding: 0.08rem 0.35rem !important;
+      font-size: 8.5pt !important;
+      color: #1a1a1a !important;
+      background: transparent !important;
+    }
+
+    a {
+      color: #333 !important;
+      text-decoration: none !important;
+    }
+
+    p, li {
+      orphans: 2;
+      widows: 2;
+    }
+  }
+
+  @page {
+    margin: 1cm;
+    size: A4;
+  }
+</style>
