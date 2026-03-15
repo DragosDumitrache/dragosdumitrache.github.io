@@ -1,7 +1,7 @@
 ---
 title: "Koalify: Nine Years From Thesis to Library"
 description: "How a master's thesis on logic programming for Python eventually became a small, focused open-source library."
-date: 2026-03-15
+date: 2026-03-15T10:00:00
 tags: ["python", "koalify", "open-source"]
 ---
 

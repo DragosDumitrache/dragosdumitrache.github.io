@@ -1,7 +1,7 @@
 ---
 title: "Hello, World"
 description: "A quick introduction — who I am, what I do, and why this site exists."
-date: 2026-03-15
+date: 2026-03-15T09:00:00
 tags: ["meta"]
 featured: true
 ---
